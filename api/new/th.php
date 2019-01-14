@@ -76,13 +76,9 @@ if ($results->num_rows > 0) {
 	$no_of_records = $_GET['no_of_records'];
 
 	$count=0;
-
-    $msg1="";$msg2="";$msg3="";$msg4="";
-
-    $message_array = array();
 	
-for($i = 0; $i < $no_of_records; $i++)
-{	
+	for($i = 0; $i < $no_of_records; $i++)
+	{	
         if ($node[$i]=='Disconnected') {
 			$sql = "INSERT INTO alarm (device_id, site_id, parameter, value,remarks,date_time, status) VALUES ('$device_id', '$site_id','Node','Disconnected','Disconnected', NOW(), '0')";
          $rows = $conn->query($sql);
@@ -102,6 +98,7 @@ for($i = 0; $i < $no_of_records; $i++)
 			
 	$row = $conn->query($sql);	
 
+$msg1="";$msg2="";$msg3="";$msg4="";
 
 if($temp[$i] > $temp_max_range)
 
@@ -126,6 +123,7 @@ $row = $conn->query($sql);
 
 
 if($humidity[$i] > $hum_max_range)
+
 {
 
 $msg3= "High Humidity ".', H = '.$humidity[$i]." in Node: ".$node[$i];
@@ -135,6 +133,7 @@ $rows = $conn->query($sql);
 }
 			 
 if($humidity[$i] < $hum_min_range)
+
 {
 $msg4= "Low Humidity ".', H = '.$humidity[$i]." in Node: ".$node[$i];
 
@@ -143,43 +142,72 @@ $sql = "INSERT INTO alarm (device_id, site_id, parameter, value, remarks,date_ti
 $row = $conn->query($sql);
 
  }
-$txt  = '';
-if($msg1){$txt .= $msg1;}
-if($msg2){$txt .= ' , '.$msg2;}
-if($msg3){$txt .= ' , '.$msg3;}
-if($msg4){$txt .= ' , '.$msg4;}
-array_push($message_array, $txt);
-$msg1="";$msg2="";$msg3="";$msg4="";
+
+$message_array = array();
+
+if($msg1)
+{
+    //$sss .= $msg1.', ';
+    array_push($message_array, $msg1);
+}
+if($msg2)
+{
+    //$sss .= $msg2.', ';
+    array_push($message_array, $msg2);
+}
+if($msg3)
+{
+    //$sss .= $msg3.', ';
+    array_push($message_array, $msg3);
+}
+if($msg4)
+{
+    //$sss .= $msg4.', ';
+    array_push($message_array, $msg4);
 }
 
-echo '{"result": "sucess"}';
-
-if(count($message_array))
+$txt = '';
+// Message send
+$txt .= 'Site Id : '.$site_id. ' , ';
+$txt .= 'Site Name : '.$site_name;
+if(count($message_array) > 0)
 {
     $txt = '';
-    $count = count($message_array);
-    $i = 0;
-    while($count > $i)
+    $i = 0; 
+    while($i < count($message_array))
     {
+        if($message_array[$i])
+        {
         $txt .= $message_array[$i];
-        $txt .= ' , ';
-        $i++;
+        if($message_array[$i++])
+        {
+            $txt .= '  ';
+        }
     }
-}
+    }
 
-$txt2 = 'Site ID : '.$site_id. ', Site Name : '. $site_name.' , '.$txt;
-$final_message =  substr_replace($txt2 ,"", -2);
-
-
-$token = "736236549:AAFS5uo1_0sHXIVWo4LlGNl8P-IRENIybUE";
+ $token = "736236549:AAFS5uo1_0sHXIVWo4LlGNl8P-IRENIybUE";
 
 $data = [
-    'text' => $final_message,
+    'text' => $txt,
     'chat_id' => '-340494196'
 ];
 
 file_get_contents("https://api.telegram.org/bot$token/sendMessage?" . http_build_query($data));  
-echo $final_message;
 
+}
+
+$msg1="";$msg2="";$msg3="";$msg4="";
+$txt;
+
+
+}
+
+echo '{"result": "sucess"}';
+
+//print_r($send_msg);
+//echo "<script>window.location = 'http://166.62.16.132/ALLSMS/smssend.php?phone=$phone1&text=$send_msg&user=csl&password=csl20182ra'</script>";
+/*header("Location:http://166.62.16.132/ALLSMS/smssend.php?phone=$phone1&text=$send_msg&user=csl&password=csl20182ra");
+*/
 
 ?>

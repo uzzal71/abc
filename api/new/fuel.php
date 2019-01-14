@@ -11,8 +11,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-         $site_id=$row["site_id"];
-         //$bank=$row["bank"];
+         $site_id = $row["site_id"];
     }
 
 }
@@ -29,7 +28,8 @@ if ($resultt->num_rows > 0) {
          $circle_id = $row["circle_id"];
          $region_id = $row["region_id"];
          $phone1 = $row["phone1"];
-         $email1 = $row["email1"];          
+         $email1 = $row["email1"]; 
+         $site_name = $row["site_name"];         
     }
 
 }
@@ -95,7 +95,7 @@ $row = $conn->query($sql);
  }
 
 echo '{"result": "sucess"}';
-$mssg = $msg1.' '.$msg2; 
+$mssg = 'Site ID : '. $site_id . ', Site Name : ' . $site_name .', message : '. $msg1.' '.$msg2; 
 $send_msg = str_replace(',,',',',$mssg);
 
 if(strlen($send_msg) > 4) {
