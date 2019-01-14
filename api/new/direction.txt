@@ -1,0 +1,15 @@
+abc\application\controllers = User.php 
+
+abc\application\models      = Main_model.php
+
+abc\application\views       = bank_alarm.php
+
+abc\application\views       = view_temp_humidity.php
+
+abc\application\views       = view_fuel.php
+
+abc\application\views       = header.php
+
+abc\application\views       = list_data.php
+
+abc\application\views       = report.php

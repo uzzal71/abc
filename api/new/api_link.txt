@@ -1,0 +1,22 @@
+energy:
+---------------------
+
+http://192.168.1.95:8080/abc/api/new/energy.php?device_id=103;&node=1;2;1;2;2;&positive_real_energy=Disconnected;5.6;6.5;8.2;7.8;&total_real_power=Disconnected;6.6;6.7;8.2;7.9;&total_apparent_power=Disconnected;6.8;6.7;10.2;14;&total_reactive_power=Disconnected;10;6.7;8.2;7.8;&total_power_factor=Disconnected;10;6.7;8.2;7.8;&frequency=Disconnected;10;6.7;8.2;7.8;&instantaneous_current_l1=Disconnected;10;6.7;8.2;7.8;&instantaneous_current_l2=Disconnected;10;6.7;8.2;7.8;&instantaneous_current_l3=Disconnected;10;6.7;8.2;7.8;&instantaneous_current_ln=Disconnected;10;6.7;8.2;7.8;&voltage_phase_l12=Disconnected;60;6.7;80;7.8;&voltage_phase_l23=Disconnected;10;6.7;8.2;7.8;&voltage_phase_l31=Disconnected;10;6.7;8.2;7.8;&voltage_phase_l1=Disconnected;10;6.7;8.2;7.8;&voltage_phase_l2=Disconnected;10;6.7;8.2;7.8;&voltage_phase_l3=Disconnected;10;6.7;8.2;7.8;&real_power_l1=Disconnected;10;6.7;8.2;7.8;&real_power_l2=Disconnected;10;6.7;8.2;7.8;&real_power_l3=Disconnected;10;6.7;8.2;7.8;&no_of_records=5;
+
+
+http://166.62.16.132/abc/api/new/energy.php?device_id=103;&node=1;2;1;2;2;&positive_real_energy=1;5.6;6.5;8.2;7.8;&total_real_power=1.2;6.6;6.7;8.2;7.9;&total_apparent_power=5.32;6.8;6.7;10.2;14;&total_reactive_power=2.2;10;6.7;8.2;7.8;&total_power_factor=2.2;10;6.7;8.2;7.8;&frequency=2.2;10;6.7;8.2;7.8;&instantaneous_current_l1=2.2;10;6.7;8.2;7.8;&instantaneous_current_l2=2.2;10;6.7;8.2;7.8;&instantaneous_current_l3=2.2;10;6.7;8.2;7.8;&instantaneous_current_ln=2.2;10;6.7;8.2;7.8;&voltage_phase_l12=2.2;60;6.7;80;7.8;&voltage_phase_l23=2.2;10;6.7;8.2;7.8;&voltage_phase_l31=2.2;10;6.7;8.2;7.8;&voltage_phase_l1=2.2;10;6.7;8.2;7.8;&voltage_phase_l2=2.2;10;6.7;8.2;7.8;&voltage_phase_l3=2.2;10;6.7;8.2;7.8;&real_power_l1=2.2;10;6.7;8.2;7.8;&real_power_l2=2.2;10;6.7;8.2;7.8;&real_power_l3=2.2;10;6.7;8.2;7.8;&no_of_records=5;
+
+temp:
+------------------
+
+http://192.168.1.95:8080/abc/api/new/temp_humidity.php?device_id=103;&node=1;2;3;4;5;&temp=1;100;1;8.2;7.8;&humidity=1.2;6.6;6.7;8.2;7.9;&no_of_records=5
+
+fuel:
+------------------
+
+http://192.168.1.95:8080/abc/api/new/fuel.php?device_id=103;&node=3;5;6;8;7;&quantity=Disconnected;6.6;6.7;8.2;7.9;&no_of_records=5;
+
+settings API:
+--------------------
+
+http://192.168.1.95:8080/abc/api/new/settings.php?device_id=103
