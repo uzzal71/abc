@@ -132,4 +132,20 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('Login_model' => 'login','Admin_model' => 'admin', 'User_model' => 'user', 'Circle_model' => 'circle', 'Region_model' => 'region', 'Site_model' => 'site', 'Device_model' => 'device', 'Node_type_model' => 'node_type', 'IO_Card_model' => 'io_card', 'Data_range_model' => 'data_range', 'Data_sheet_model' => 'data_sheet', 'Report_model' => 'report', 'Ajax_model' => 'ajax', 'api_model' => 'api');
+$autoload['model'] = array(
+	'Login_model'         => 'login',
+	'Admin_model'         => 'admin',
+	'User_model'          => 'user',
+	'Circle_model'        => 'circle',
+	'Region_model'        => 'region',
+	'Site_model'          => 'site',
+	'Device_model'        => 'device',
+	'Node_type_model'     => 'node_type',
+	'IO_Card_model'       => 'io_card',
+	'Data_range_model'    => 'data_range',
+	'Data_sheet_model'    => 'data_sheet',
+	'Report_model'        => 'report',
+	'Ajax_model'          => 'ajax',
+	'api_model'           => 'api',
+	'TEST'                => 'test_model'
+	);

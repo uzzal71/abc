@@ -67,6 +67,9 @@ class Admin_model extends CI_Model
 
    /**
    **
+   OLD Query--------
+   change date : 2019-16-01
+   $sql = "SELECT AVG(`positive_real_energy`) AS energy_pdb FROM `energy_meter` WHERE cast(`date_time` as date) > '$date_time' AND node_id = '3' ";
    **/
    public function get_pdb_energy()
    {
