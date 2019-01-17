@@ -147,5 +147,5 @@ $autoload['model'] = array(
 	'Report_model'        => 'report',
 	'Ajax_model'          => 'ajax',
 	'api_model'           => 'api',
-	'TEST'                => 'test_model'
+	'Test_model'          => 'test_model'
 	);
